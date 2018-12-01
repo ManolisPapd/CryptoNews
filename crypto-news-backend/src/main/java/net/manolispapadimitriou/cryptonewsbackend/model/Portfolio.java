@@ -1,10 +1,8 @@
-package net.manolispapadimitriou.cryptonewsbackend.models;
+package net.manolispapadimitriou.cryptonewsbackend.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import java.util.Optional;
 
 @Entity
 @Table(name = "PORTFOLIO",
@@ -26,7 +24,7 @@ public class Portfolio {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
-
+    @JsonIgnore
     private User user;
 
     public Portfolio() {

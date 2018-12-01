@@ -1,8 +1,7 @@
-package net.manolispapadimitriou.cryptonewsbackend.repositories;
+package net.manolispapadimitriou.cryptonewsbackend.repository;
 
-import net.manolispapadimitriou.cryptonewsbackend.models.Portfolio;
+import net.manolispapadimitriou.cryptonewsbackend.model.Portfolio;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 

@@ -1,8 +1,8 @@
-package net.manolispapadimitriou.cryptonewsbackend.services;
+package net.manolispapadimitriou.cryptonewsbackend.service;
 
-import net.manolispapadimitriou.cryptonewsbackend.models.Portfolio;
-import net.manolispapadimitriou.cryptonewsbackend.models.User;
-import net.manolispapadimitriou.cryptonewsbackend.repositories.UserRepository;
+import net.manolispapadimitriou.cryptonewsbackend.model.Portfolio;
+import net.manolispapadimitriou.cryptonewsbackend.model.User;
+import net.manolispapadimitriou.cryptonewsbackend.repository.UserRepository;
 import net.manolispapadimitriou.cryptonewsbackend.viewmodel.PortfolioViewModel;
 import org.springframework.stereotype.Component;
 

@@ -1,4 +1,4 @@
-package net.manolispapadimitriou.cryptonewsbackend.models;
+package net.manolispapadimitriou.cryptonewsbackend.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -34,6 +34,11 @@ public class User {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+        this.password = password;
+    }
+
+    public User(String username, String password) {
+        this.username = username;
         this.password = password;
     }
 

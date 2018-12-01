@@ -1,22 +1,17 @@
-package net.manolispapadimitriou.cryptonewsbackend.controllers;
+package net.manolispapadimitriou.cryptonewsbackend.controller;
 
-import net.manolispapadimitriou.cryptonewsbackend.models.Portfolio;
-import net.manolispapadimitriou.cryptonewsbackend.models.User;
-import net.manolispapadimitriou.cryptonewsbackend.repositories.PortfolioRepository;
-import net.manolispapadimitriou.cryptonewsbackend.repositories.UserRepository;
-import net.manolispapadimitriou.cryptonewsbackend.services.Mapper;
+import net.manolispapadimitriou.cryptonewsbackend.model.Portfolio;
+import net.manolispapadimitriou.cryptonewsbackend.repository.PortfolioRepository;
+import net.manolispapadimitriou.cryptonewsbackend.repository.UserRepository;
+import net.manolispapadimitriou.cryptonewsbackend.service.Mapper;
 import net.manolispapadimitriou.cryptonewsbackend.viewmodel.PortfolioViewModel;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-import javax.sound.sampled.Port;
 import javax.validation.ValidationException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/portfolio")

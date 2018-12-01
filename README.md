@@ -35,3 +35,4 @@ Portfolio, add crypto bought when and what price
 Πίνακας Portfolio
 (id,fk(id_user)) PK, currency, date bought, price bought
 
+JUnit kai custom error handler
