@@ -2,7 +2,9 @@ package net.manolispapadimitriou.cryptonewsbackend.controller;
 
 import net.manolispapadimitriou.cryptonewsbackend.model.CustomResponse;
 import net.manolispapadimitriou.cryptonewsbackend.model.Portfolio;
+import net.manolispapadimitriou.cryptonewsbackend.model.User;
 import net.manolispapadimitriou.cryptonewsbackend.repository.PortfolioRepository;
+import net.manolispapadimitriou.cryptonewsbackend.repository.UserRepository;
 import net.manolispapadimitriou.cryptonewsbackend.service.Mapper;
 import net.manolispapadimitriou.cryptonewsbackend.viewmodel.PortfolioViewModel;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,11 +16,14 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/portfolio")
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:4200")
 public class PortfolioController {
 
     @Autowired
     private PortfolioRepository portfolioRepository;
+
+    @Autowired
+    private UserRepository userRepository;
 
     public Mapper mapper;
 
@@ -47,10 +52,11 @@ public class PortfolioController {
 
 
     //Return all currencies by user
-    @GetMapping("/currencies/{id}")
-    public List<Portfolio> byId(@PathVariable String id){
+    @GetMapping("/currencies/{username}")
+    public List<Portfolio> byId(@PathVariable String username){
 
-        return portfolioRepository.findByUserId(Integer.parseInt(id));
+        User user = userRepository.findByUsername(username);
+        return portfolioRepository.findByUserId(user.getId());
     }
 
 

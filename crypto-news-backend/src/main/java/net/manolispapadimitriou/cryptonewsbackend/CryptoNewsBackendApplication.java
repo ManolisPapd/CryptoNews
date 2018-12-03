@@ -18,4 +18,6 @@ public class CryptoNewsBackendApplication {
     public static void main(String[] args) {
         SpringApplication.run(CryptoNewsBackendApplication.class, args);
     }
+
+
 }

@@ -20,10 +20,10 @@ export class CryptoComponent implements OnInit {
     var price24hr = parseFloat(this.objectCrypto.changePercent24Hr);
     var element = "price24hr_" + this.objectCrypto.id;
     if(price24hr < 0 ){
-      document.getElementById(element).style.color = "red";
+      document.getElementById(element).style.color = "#ff0000";
     }
     else{
-      document.getElementById(element).style.color = "blue";
+      document.getElementById(element).style.color = "#0cff00";
     }
   }
 

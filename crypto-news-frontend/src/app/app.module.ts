@@ -9,11 +9,27 @@ import {Router, RouterModule, Routes} from "@angular/router";
 import {HttpClientModule} from "@angular/common/http";
 import { CryptoComponent } from './cryptos/crypto/crypto.component';
 import {FormsModule} from "@angular/forms";
+import { PortfolioComponent } from './portfolio/portfolio.component';
+import { ContactComponent } from './contact/contact.component';
+import { LoginComponent } from './login/login.component';
 
 
 const appRoutes :Routes=[
   {
     path:'',
+    component:CryptosComponent,
+
+  },
+  {
+    path:'portfolio',
+    component:PortfolioComponent,
+  },
+  {
+    path:'contact',
+    component:ContactComponent
+  },
+  {
+    path:'**',
     component:CryptosComponent
   },
 
@@ -24,7 +40,10 @@ const appRoutes :Routes=[
     AppComponent,
     NavigationComponent,
     CryptosComponent,
-    CryptoComponent
+    CryptoComponent,
+    PortfolioComponent,
+    ContactComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
