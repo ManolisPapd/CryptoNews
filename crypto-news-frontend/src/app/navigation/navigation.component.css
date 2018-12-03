@@ -1,0 +1,35 @@
+
+html, body {
+  height: 100%;
+  font-family: 'Varela Round' sans-serif;
+  text-align: center;
+}
+
+h2 {
+  margin-top: 0%;
+  font-size: 3rem;
+  display: inline-block;
+}
+h2 div {
+  position: relative;
+  float: left;
+}
+h2 div:first-child {
+  color: #f7f924;
+  margin-right: 1rem;
+}
+
+
+.hm-gradient {
+  background-image: linear-gradient(to top, #2d2e30 0%, #e3eeff 99%, #e3eeff 100%);
+}
+.darken-grey-text {
+  color: #2E2E2E;
+}
+
+.navbar .dropdown-menu a:hover {
+  color: #616161 !important;
+}
+.darken-grey-text {
+  color: #2E2E2E;
+}

@@ -1,0 +1,29 @@
+<div class="card bg-light sticky-top">
+<div class="container ">
+  <div class="row">
+    <div class="col-sm">
+      <h3>Rank</h3>
+    </div>
+    <div class="col-sm">
+      <h3>Icon</h3>
+    </div>
+    <div class="col-sm">
+      <h3>Name</h3>
+    </div>
+    <div class="col-sm">
+      <h3>Ticker</h3>
+    </div>
+    <div class="col-sm">
+      <h3>Price (USD)</h3>
+    </div>
+    <div class="col-sm">
+      <h3>24hr dif</h3>
+    </div>
+  </div>
+</div>
+</div><br><br>
+  <app-crypto *ngFor="let crypto of cryptos"
+  [objectCrypto]="crypto"></app-crypto>
+
+
+

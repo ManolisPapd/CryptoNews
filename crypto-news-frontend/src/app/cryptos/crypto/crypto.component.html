@@ -1,0 +1,26 @@
+<div class="card bg-light">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <h3>{{objectCrypto.rank}}</h3>
+      </div>
+      <div class="col-sm">
+        <img src="assets//32x32//{{objectCrypto.id}}.png" alt="image">
+      </div>
+      <div class="col-sm">
+        <h3>{{objectCrypto.name}}</h3>
+      </div>
+      <div class="col-sm">
+        <h3>{{objectCrypto.symbol}}</h3>
+      </div>
+      <div class="col-sm">
+        <h3 style="color:blue;"> $ {{(objectCrypto.priceUsd.slice(0,-12)) | number}}</h3>
+      </div>
+      <div class="col-sm">
+       <h3 id="price24hr_{{objectCrypto.id}}">  {{updateColor24Prices()}}% {{objectCrypto.changePercent24Hr.slice(0,-12)}}</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
