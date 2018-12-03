@@ -15,7 +15,17 @@ public class PortfolioViewModel {
     private String priceBought;
 
     @NotNull
-    private int user_id;
+    private String username;
+
+    public PortfolioViewModel() {
+    }
+
+    public PortfolioViewModel(@NotNull String currency, @NotNull String dateBought, @NotNull String priceBought, @NotNull String username) {
+        this.currency = currency;
+        this.dateBought = dateBought;
+        this.priceBought = priceBought;
+        this.username = username;
+    }
 
     public int getId() {
         return id;
@@ -49,11 +59,11 @@ public class PortfolioViewModel {
         this.priceBought = priceBought;
     }
 
-    public int getUser_id() {
-        return user_id;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
+    public void setUsername(String username) {
+        this.username = username;
     }
 }

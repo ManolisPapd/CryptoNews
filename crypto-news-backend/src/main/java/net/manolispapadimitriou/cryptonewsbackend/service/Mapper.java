@@ -19,12 +19,11 @@ public class Mapper {
 
     public Portfolio convertToPortfolioEntity(PortfolioViewModel viewModel){
 
-        Optional<User> userOptional = userRepository.findById(viewModel.getUser_id());
+        User user = userRepository.findByUsername(viewModel.getUsername());
 
-        if( userOptional.isPresent()) {
-            User user1 = null;
-            user1 = userOptional.get();
-            var entity = new Portfolio(viewModel.getCurrency(),viewModel.getDateBought(), viewModel.getPriceBought(),user1);
+        if(user!=null) {
+
+            var entity = new Portfolio(viewModel.getCurrency(),viewModel.getDateBought(), viewModel.getPriceBought(),user);
 
             return entity;
         }

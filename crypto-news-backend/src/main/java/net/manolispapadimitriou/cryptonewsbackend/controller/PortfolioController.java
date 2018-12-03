@@ -1,15 +1,14 @@
 package net.manolispapadimitriou.cryptonewsbackend.controller;
 
+import net.manolispapadimitriou.cryptonewsbackend.model.CustomResponse;
 import net.manolispapadimitriou.cryptonewsbackend.model.Portfolio;
 import net.manolispapadimitriou.cryptonewsbackend.repository.PortfolioRepository;
-import net.manolispapadimitriou.cryptonewsbackend.repository.UserRepository;
 import net.manolispapadimitriou.cryptonewsbackend.service.Mapper;
 import net.manolispapadimitriou.cryptonewsbackend.viewmodel.PortfolioViewModel;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.ValidationException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,37 +17,32 @@ import java.util.List;
 @CrossOrigin
 public class PortfolioController {
 
+    @Autowired
     private PortfolioRepository portfolioRepository;
-    private UserRepository userRepository;
+
     public Mapper mapper;
 
-    public PortfolioController(PortfolioRepository portfolioRepository, UserRepository userRepository, Mapper mapper) {
-        this.portfolioRepository = portfolioRepository;
-        this.userRepository = userRepository;
+    public PortfolioController(Mapper mapper) {
         this.mapper = mapper;
     }
 
     @GetMapping("/all")
     public List<Portfolio> all(){
         List<Portfolio> portfolioList = new ArrayList<>();
-
         this.portfolioRepository.findAll().forEach(portfolioList::add);
-
         return portfolioList;
     }
 
     //Create new currency by user
     @RequestMapping(value = "/currency", method = RequestMethod.POST)
-    public Portfolio save(@RequestBody PortfolioViewModel currency, BindingResult bindingResult){
-        if (bindingResult.hasErrors()) {
-            throw new ValidationException();
-        }
-
+    public CustomResponse save(@RequestBody PortfolioViewModel currency){
 
         var portfolioEntity = mapper.convertToPortfolioEntity(currency);
         portfolioRepository.save(portfolioEntity);
 
-        return portfolioEntity;
+        CustomResponse customResponse = new CustomResponse(200,"currency added to the database");
+
+        return customResponse;
     }
 
 
