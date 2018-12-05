@@ -5,14 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { CryptosComponent } from './cryptos/cryptos.component';
-import {Router, RouterModule, Routes} from "@angular/router";
+import {Router, RouterModule, Routes, ActivatedRoute} from "@angular/router";
 import {HttpClientModule} from "@angular/common/http";
 import { CryptoComponent } from './cryptos/crypto/crypto.component';
 import {FormsModule} from "@angular/forms";
-import { PortfolioComponent } from './portfolio/portfolio.component';
+import { PortfolioComponent } from './login/portfolio/portfolio.component';
 import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
-
+import {ReactiveFormsModule} from "@angular/forms";
+import { CurrencycompComponent } from './login/portfolio/currencycomp/currencycomp.component';
 
 const appRoutes :Routes=[
   {
@@ -29,6 +30,10 @@ const appRoutes :Routes=[
     component:ContactComponent
   },
   {
+    path:'login',
+    component:LoginComponent
+  },
+  {
     path:'**',
     component:CryptosComponent
   },
@@ -43,14 +48,17 @@ const appRoutes :Routes=[
     CryptoComponent,
     PortfolioComponent,
     ContactComponent,
-    LoginComponent
+    LoginComponent,
+    CurrencycompComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
-    RouterModule.forRoot(appRoutes, {enableTracing:true})
+    RouterModule.forRoot(appRoutes, {enableTracing:true}),
+    ReactiveFormsModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

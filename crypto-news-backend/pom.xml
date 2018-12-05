@@ -12,6 +12,8 @@
     <description>CryptoNews Application</description>
 
 
+
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -94,6 +96,7 @@
             <version>0.7.0</version>
         </dependency>
 
+
     </dependencies>
 
 
@@ -118,9 +121,14 @@
             </plugin>
 
             <plugin>
-                <inherited>true</inherited>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.0</version>
+                <configuration>
+                    <source>11</source>
+                    <target>11</target>
+                </configuration>
+
             </plugin>
         </plugins>
     </build>
@@ -135,6 +143,8 @@
             </snapshots>
         </repository>
     </repositories>
+
+
 
 
 </project>

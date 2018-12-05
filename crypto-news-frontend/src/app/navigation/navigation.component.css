@@ -33,3 +33,7 @@ h2 div:first-child {
 .darken-grey-text {
   color: #2E2E2E;
 }
+.container-fluid{
+  padding: 0 20px !important;
+}
+
